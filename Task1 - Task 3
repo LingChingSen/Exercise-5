@@ -1,0 +1,146 @@
+Task 1 
+(1)
+- Triangle.java
+
+(2) -Cant run because no main method.
+
+(3)- Already added main method, so the program can run.
+
+Task 2
+import java.util.Scanner;
+class TriangleDemo{
+     // The setHeight method accepts an argument which is    
+     //stored in the height field.
+public static void main (String[]args){
+Scanner input = new Scanner(System.in);   
+double height,base;
+Triangle t = new Triangle();    
+System.out.println("Please enter height");
+height = input.nextDouble();
+System.out.println("Please enter base");
+base = input.nextDouble();
+
+t.set(height,base);
+t.getHeight();
+t.getBase();
+
+System.out.println("The pyramid's height is:"+ t.getHeight());
+System.out.println("The pyramid's base is:"+ t.getBase());
+System.out.println("The pyramid's area is:"+ t.getArea());
+
+}
+}
+
+
+
+public class Triangle
+{
+     private double height;
+     private double base;
+
+
+     public void setHeight(double len)
+     {
+          height = len;
+     }
+
+     // The setBase method accepts an argument which is 
+     //stored in the base field. 
+    
+     public void setBase(double b)
+     {
+          base = b;
+     }
+
+     //The set method accepts two arguments which are 
+     //stored in the height and base fields.
+  
+     public void set(double len, double b)
+     {
+          height = len;
+          base = b;
+     }
+
+    // The getHeight method returns the value stored in the 
+    //  height field.
+
+     public double getHeight()
+     {
+          return height;
+     }
+
+     // The getBase method returns the value stored in the   
+     //base field
+
+     public double getBase()
+     {
+          return base;
+     }
+
+     // The getArea method returns the value of area
+    // with formula : 0.5 * height * base
+
+     public double getArea()
+     {
+          return 0.5 * height * base;
+     }
+}
+
+
+(3) a) object = t
+    b)user-defined methods with return value = getBase(),getHeight(), getArea()
+    c) user-defined methods with passing-parameters = setHeight(double len),setBase(double b),set(double len, double b)
+    d) accessor methods = getBase(),getHeight(), getArea()
+    e)  mutator methods = setHeight(double len),setBase(double b),set(double len, double b)
+    
+    Task 3
+    
+    import java.util.Scanner;
+class Employee{
+public static void main(String[] args){
+Scanner input = new Scanner(System.in);
+int employeeID;
+double grossPay, stateTax, federalTax;
+System.out.println("Enter your employee ID number:");
+employeeID = input.nextInt();
+System.out.println("Enter your Gross Pay:RM");
+grossPay = input.nextDouble();
+System.out.println("Enter your State Tax:RM");
+stateTax = input.nextDouble();
+System.out.println("Enter your Federal Tax:RM");  
+federalTax = input.nextDouble();
+
+PayrollDemo p = new PayrollDemo(employeeID,grossPay,stateTax,federalTax);
+p.calculateNetpay();
+System.out.println("Enter your employee Id number:"+employeeID);
+System.out.printf("Enter your Gross Pay:RM%.2f", grossPay);
+System.out.println("                ");
+System.out.printf("Enter your State Tax:RM%.2f",stateTax);
+System.out.println("                ");
+System.out.printf("Enter your Federal Tax:RM%.2f",federalTax); 
+System.out.println("                "); 
+p.printOutput();
+
+
+
+
+}  
+  }
+  
+class PayrollDemo{
+private int employeeID;
+private double grossPay,stateTax,federalTax,netPay;
+public PayrollDemo(int employeeID,double grossPay,double stateTax,double federalTax){
+  this.grossPay = grossPay;
+  this.stateTax = stateTax;
+  this.federalTax = federalTax;
+}
+
+public double calculateNetpay(){
+return netPay = grossPay-(stateTax+federalTax);
+  
+}
+public void printOutput(){
+  System.out.printf("Net pay is:RM%.2f",calculateNetpay());
+  }
+}
